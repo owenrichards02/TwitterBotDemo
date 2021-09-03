@@ -1,0 +1,19 @@
+opr.devwork@gmail.com
+owensbotpass
+@APITesterOPR
+
+
+API Key:
+9X2wkgvy3Pd18sxqTEYTHDIbv
+
+API Key Secret:
+ocC1OfEnZs11EAaK5MTFIeY5T4dPs2Z57jzrUyIlnsOUDpt7X1
+
+Bearer Token:
+AAAAAAAAAAAAAAAAAAAAAABdTQEAAAAA63tvI4nVg%2BI3ODjHl%2BA%2FgHTWnbA%3DmMIQj8lrMZkjYaal5pg8EGa7XozJFswneIp5k6tFk9m304ZKEq
+
+Access Token:
+1433812119015788567-Jl4gMdaEOG9ZgA85hMXb47rHdX4Xfa
+
+Access Token Secret:
+8SnEwY3d6ZJfYOYfOT1Xe6sS0kEaeBS1rr6cWqBqbbfWx
