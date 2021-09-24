@@ -68,12 +68,44 @@ function useResults(){
 //download image functions --------
 var download = function(url, filename, callback){
   request.head(url, function(err, res, body){
-    console.log('content-type:', res.headers['content-type']);
-    console.log('content-length:', res.headers['content-length']);
+    //console.log('content-type:', res.headers['content-type']);
+    //console.log('content-length:', res.headers['content-length']);
 
     request(url).pipe(fs.createWriteStream(filename)).on('close', callback);
+    uploadImg();
   });
 };
 //-----------------------------------
 
+function uploadImg(){
+    var filename = 'result.jpg';
+    var metadat = {
+        encoding: 'base64'
+    }
+    var bit64Encod = fs.readFileSync(filename, metadat);
+    T.post('media/upload', { media_data: bit64Encod }, afterUpload)
+}
 
+function afterUpload(err, data, response){
+    if(err){
+        console.log('upload data - ', data)
+        console.log('upload response - ', response)
+        throw new Error("MEDIA UPLOAD FAILED");
+    }
+    var id = data.media_id_string
+    var tweet = {
+        status: tweetbody,
+        media_ids: [id]
+    }
+    T.post('statuses/update', tweet, allDone)
+}
+
+function allDone(err, data, response){
+    if(err){
+        console.log('data - ', data);
+        console.log('response - ', response);
+        throw new Error("could not post tweet");
+    }else{
+        console.log('IT WORKED!')
+    }
+}
